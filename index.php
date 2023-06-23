@@ -3,7 +3,7 @@
     +--------------+                     +--------------+
     | id           |                     | id           |
     | name         |                     | service_id   |
-    | description  |                     | price        |
+    | description  |                     | price        | 
     | ...          |                     | ...          |
     +--------------+                     +--------------+
           |                                    |
