@@ -1,9 +1,10 @@
-<?php
+<?php 
 
-namespace Job\Http\PriceListController
+namespace Job\Http;
 
 use Job\PriceList;
 use Illuminate\Http\Request;
+
 
 class PriceListsController extends Controller
 {
