@@ -1,34 +1,20 @@
-    +--------------+     1       1..*     +--------------+
-    |   Services   |---------------------|  Price Lists |
-    +--------------+                     +--------------+
-    | id           |                     | id           |
-    | name         |                     | service_id   |
-    | description  |                     | price        | 
-    | ...          |                     | ...          |
-    +--------------+                     +--------------+
-          |                                    |
-          |                                    |
-          |                           1        |
-          |                     +--------------+
-          |---------------------|    Points    |
-                                +--------------+
-                                | id           |
-                                | name         |
-                                | ...          |
-                                +--------------+
-                                | is_active    |
-                                +--------------+
-                                | | | | | | | |
-                                |               |
-                                | 1         1   |
-                                |               |
-                    +--------------+     +--------------+
-                    |  Sales       |     |   Customers  |
-                    +--------------+     +--------------+
-                    | id           |     | id           |
-                    | service_id   |     | name         |
-                    | point_id     |     | ...          |
-                    | quantity     |     +--------------+
-                    | total_amount |
-                    | created_at   |
-                    +--------------+
+<?php
+
+namespace Job\Http\Controllers;
+
+use Job\Models\Service;
+use Illuminate\Http\Request;
+
+class ServicesController extends Controller
+{
+    public function productsByLocation(Request $request, $location)
+    {
+        // Retrieve the services available for the given location
+        $services = Service::where('location', $location)->get();
+
+        // Return the services as a response
+        return response()->json($services);
+    }
+
+    // Other controller methods...
+}
