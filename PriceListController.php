@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Job\Http\PriceListController
 
-use App\Models\PriceList;
+use Job\PriceList;
 use Illuminate\Http\Request;
 
 class PriceListsController extends Controller
